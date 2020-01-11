@@ -49,7 +49,6 @@ app.post('/webhook', (req, res) => {
   } else {
     // Return a '404 Not Found' if event is not from a page subscription
     res.sendStatus(404);
-    console.log("ERROR")
   }
 
 });
@@ -160,7 +159,8 @@ function callSendAPI(sender_psid, response) {
   }, (err, res, body) => {
     if (!err) {
       console.log('message sent!')
-      console.log(response)
+      console.log(res)
+      console.log(body)
     } else {
       console.error("Unable to send message:" + err);
     }
