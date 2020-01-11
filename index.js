@@ -1,6 +1,6 @@
 'use strict';
 const request = require('request');
-const PAGE_ACCESS_TOKEN = "EAAlw3BA5GxEBAAwZBoUALMmBZCZCBFPe9C14xaSk2yI2RBEqUcFcC8nJdM2CNlcC89K4wmrZCdvp7b2EZAkqoE5V3N5ukm3N4cylEcTpafECTqOpokV9u1jD2nvILMclCPCXxlIu4EHteMgJQ4Kq6EVr4TaZCZCR2BfhIgKwGwmvQZDZD"
+const PAGE_ACCESS_TOKEN = "EAAlw3BA5GxEBALUkitZAB5tz7ZCtYL6lZCJxwPoEbfPY6YRHZAUsvdfZCOjfZCzzhTiFxfoaXEYUZBRRZCZBAbC64ApGZAksZAKdCFs3gKF5YDmhXmJA5gmGSxLoyQx2IwaBbSzQdOE0ZCbj0OkCXjjh6bRzaCe8wOSj5IvX2U3wHS3ZBdgZDZD"
 
 // Imports dependencies and set up http server
 const
