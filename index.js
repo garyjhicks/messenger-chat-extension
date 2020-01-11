@@ -1,5 +1,6 @@
 'use strict';
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+//const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = "EAAlw3BA5GxEBALUkitZAB5tz7ZCtYL6lZCJxwPoEbfPY6YRHZAUsvdfZCOjfZCzzhTiFxfoaXEYUZBRRZCZBAbC64ApGZAksZAKdCFs3gKF5YDmhXmJA5gmGSxLoyQx2IwaBbSzQdOE0ZCbj0OkCXjjh6bRzaCe8wOSj5IvX2U3wHS3ZBdgZDZD"
 // Imports dependencies and set up http server
 
 require('dotenv').config()
