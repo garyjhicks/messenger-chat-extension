@@ -14,30 +14,13 @@ const
   app = express().use(body_parser.json()); // creates express http server
 
 // Sets server port and logs message on success
-app.fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(process.env.PORT || 1337, () => console.log('webhook is listening'))});
+app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 //app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res) => {
 
-    var requestSettings = {
-        url: 'https://www.stickpng.com/assets/images/5a2d8bfdb3c4622cbe35976d.png',
-        method: 'GET',
-        encoding: null
-    };
-
-    request(requestSettings, function(error, response, body) {
-        res.set('Content-Type', 'image/png');
-        res.send(body);
-    });
+    res.sendFile('absolutePathToYour/htmlPage.html');
 
 });
 
