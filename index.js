@@ -13,7 +13,7 @@ const
   app = express().use(body_parser.json()); // creates express http server
 
   app.use(express.static('public'))
-  
+
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
@@ -132,6 +132,7 @@ function handleMessage(sender_psid, received_message) {
       response = {
         "text": `Now Playing!`
       }
+      callSendAPI(sender_psid, response);
     } else {
       response = {
         "text": `You sent the message: "${received_message.text}". Now send me an attachment!`
@@ -212,5 +213,5 @@ function callSendAPI(sender_psid, response) {
     } else {
       console.error("Unable to send message:" + err);
     }
-  }); 
+  });
 }
