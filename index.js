@@ -213,7 +213,3 @@ function callSendAPI(sender_psid, response) {
     }
   }); 
 }
-
-window.extAsyncInit = function() {
-    // the Messenger Extensions JS SDK is done loading 
-};
