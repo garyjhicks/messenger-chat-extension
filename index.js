@@ -12,6 +12,8 @@ const
   path = require('path'),
   app = express().use(body_parser.json()); // creates express http server
 
+  app.use(express.static('public'))
+  
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
