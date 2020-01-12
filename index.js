@@ -19,7 +19,7 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res) => {
 
-    res.sendFile(path.join(__dirname, '../public', 'Buddy.html'))
+    res.sendFile(path.join(__dirname, './', 'Buddy.html'))
 
 });
 
