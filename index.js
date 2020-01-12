@@ -9,10 +9,22 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
+  var http = require('http'),
+  fs = require('fs'),
   app = express().use(body_parser.json()); // creates express http server
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+app.fs.readFile('./index.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    http.createServer(function(request, response) {  
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();  
+    }).listen(process.env.PORT || 1337, () => console.log('webhook is listening'))});
+
+//app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res) => {
 
@@ -211,3 +223,7 @@ function callSendAPI(sender_psid, response) {
     }
   }); 
 }
+
+window.extAsyncInit = function() {
+    // the Messenger Extensions JS SDK is done loading 
+};
