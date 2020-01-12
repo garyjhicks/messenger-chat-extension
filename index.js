@@ -31,28 +31,28 @@ app.get('/', (req, res) => {
 
 // Accepts GET requests at the /webhook endpoint
 app.get('/webhook', (req, res) => {
-  
+
     /** UPDATE YOUR VERIFY TOKEN **/
     const VERIFY_TOKEN = "N6EkM57NkumieMB9ibbM";
-    
+
     // Parse params from the webhook verification request
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
-      
+
     // Check if a token and mode were sent
     if (mode && token) {
-    
+
       // Check the mode and token sent are correct
       if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-        
+
         // Respond with 200 OK and challenge token from the request
         console.log('WEBHOOK_VERIFIED');
         res.status(200).send(challenge);
-      
+
       } else {
         // Responds with '403 Forbidden' if verify tokens do not match
-        res.sendStatus(403);      
+        res.sendStatus(403);
       }
     }
   });
@@ -136,10 +136,12 @@ function handleMessage(sender_psid, received_message) {
       response = {
         "text": `Now Playing!`
       }
+    } else {
+      response = {
+        "text": `You sent the message: "${received_message.text}". Now send me an attachment!`
+      }
     }
-    response = {
-      "text": `You sent the message: "${received_message.text}". Now send me an attachment!`
-    }
+
   } else if (received_message.attachments) {
     // Get the URL of the message attachment
     let attachment_url = received_message.attachments[0].payload.url;
