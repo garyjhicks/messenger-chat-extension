@@ -9,8 +9,7 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
-  http = require('http'),
-  fs = require('fs'),
+  path = require('path'),
   app = express().use(body_parser.json()); // creates express http server
 
 // Sets server port and logs message on success
@@ -20,7 +19,7 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res) => {
 
-    res.sendFile('absolutePathToYour/htmlPage.html');
+    res.sendFile(path.join(__dirname, '../public', 'Buddy.html'))
 
 });
 
